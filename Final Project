@@ -95,3 +95,20 @@ void merger(){
 		printf("\n No valid Jobs available\n");
 	}
 }
+
+void printer(){
+	int i=0, total=0, sum=0; 
+	double avg;
+	printf("\nSummary for the Execution\n");
+	printf("\nQuery ID\tArrival Time\tRessolving Time\tCompletion Time\tTurn Around Time\tWaiting Time");
+	for(i; i<mc; i++){
+		printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t\t%d",
+		m[i].par, (m[i].amv+1000), m[i].bts, (m[i].cmds+1000), (m[i].cmds-m[i].amv), ((m[i].cmds-m[i].amv)- m[i].bts));
+		total= m[i].cmds;
+		sum+= (m[i].cmds-m[i].amv);
+	}
+	avg = sum/mc;
+	printf("\n\nTotal time Spent for all queries: %d", total);
+	printf("\nAverage query time: %lf", avg);
+	printf("\nProcess Execution Complete");
+}
