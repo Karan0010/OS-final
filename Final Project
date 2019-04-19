@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+struct job{
+	int par;
+	int amv;
+	int bts;
+	int cmds;
+	int attr;
+}f[200], s[200], m[200];
+
+int n, fc=0, sc=0, mc=0;
+int quanti;
