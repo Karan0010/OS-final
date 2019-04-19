@@ -10,3 +10,28 @@ struct job{
 
 int n, fc=0, sc=0, mc=0;
 int quanti;
+
+void roundRobin(){
+	int time= m[0].amv, mark=0, cc=0, i, rc;
+	while(time!=120 && cc!=mc){
+		for(i=0; i<=mark; i++){
+			if(m[i].attr > quanti){
+				time += quanti;
+				m[i].attr -= quanti;
+			}
+			else if(m[i].attr <=quanti && m[i].attr !=0){
+				time += m[i].attr;
+				m[i].attr =0;
+				m[i].cmds = time;
+				cc++;
+			}
+			else;
+		}
+		int start = mark+1;
+		for(rc= start; rc<mc; rc++){
+			if(m[rc].amv <= time){
+				mark++;
+			}
+		}
+	}	
+}
